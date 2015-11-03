@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BussinessNeedController.h"
+#import "LoginViewController.h"
 
 @interface ViewController ()
 
@@ -34,9 +35,20 @@
     [bussinessNeedButton setTitle:@"商务需求" forState:UIControlStateNormal];
     [bussinessNeedButton addTarget:self action:@selector(gotoBussinessNeed) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:bussinessNeedButton];
+    
+    UIButton *logonBtn = [[UIButton alloc] init];
+    logonBtn.frame = CGRectMake(width*.4, height*.1, width*.2, height*.1);
+    logonBtn.backgroundColor = [UIColor redColor];
+    [logonBtn setTitle:@"登陆" forState:UIControlStateNormal];
+    [logonBtn addTarget:self action:@selector(gotoLogon) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:logonBtn];
 }
 -(void) gotoBussinessNeed{
     BussinessNeedController *bnController = [[BussinessNeedController alloc] init];
+    [self.navigationController pushViewController:bnController animated:YES];
+}
+-(void) gotoLogon{
+    LoginViewController *bnController = [[LoginViewController alloc] init];
     [self.navigationController pushViewController:bnController animated:YES];
 }
 

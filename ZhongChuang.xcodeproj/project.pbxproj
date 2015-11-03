@@ -47,6 +47,7 @@
 		59665E3B1BA399B600F97570 /* KeyWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59665E361BA399B600F97570 /* KeyWordViewController.m */; };
 		59665E3C1BA399B600F97570 /* SaleGoodServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59665E381BA399B600F97570 /* SaleGoodServiceViewController.m */; };
 		59665E3D1BA399B600F97570 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59665E391BA399B600F97570 /* ViewController.m */; };
+		597FD90C1BE577BA0061BB74 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FD90B1BE577BA0061BB74 /* LoginViewController.m */; };
 		599EE1A61BB0E26A00F77E30 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599EE1A51BB0E26A00F77E30 /* CFNetwork.framework */; };
 		599EE1A81BB0E27700F77E30 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599EE1A71BB0E27700F77E30 /* SystemConfiguration.framework */; };
 		599EE1AA1BB0E28200F77E30 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599EE1A91BB0E28200F77E30 /* MobileCoreServices.framework */; };
@@ -136,6 +137,8 @@
 		59665E371BA399B600F97570 /* SaleGoodServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleGoodServiceViewController.h; sourceTree = "<group>"; };
 		59665E381BA399B600F97570 /* SaleGoodServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleGoodServiceViewController.m; sourceTree = "<group>"; };
 		59665E391BA399B600F97570 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		597FD90A1BE577BA0061BB74 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		597FD90B1BE577BA0061BB74 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		599EE1A51BB0E26A00F77E30 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		599EE1A71BB0E27700F77E30 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		599EE1A91BB0E28200F77E30 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -241,8 +244,8 @@
 			children = (
 				599EE1AF1BB0EFF000F77E30 /* ASIHttpRequest */,
 				5938AEDE1BA1BC5F00717029 /* libraries */,
-				5937D4ED1BA1B7CD00D32723 /* Busine */,
-				5937D5071BA1B7CD00D32723 /* BusineTests */,
+				5937D4ED1BA1B7CD00D32723 /* ZhongChuang */,
+				5937D5071BA1B7CD00D32723 /* ZhongChuangTests */,
 				5937D4EC1BA1B7CD00D32723 /* Products */,
 				C6C8C25F5994718C18831C29 /* Pods */,
 				0B24173C566A3A71A0DEFD36 /* Frameworks */,
@@ -258,7 +261,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5937D4ED1BA1B7CD00D32723 /* Busine */ = {
+		5937D4ED1BA1B7CD00D32723 /* ZhongChuang */ = {
 			isa = PBXGroup;
 			children = (
 				59665E331BA399B600F97570 /* BuyGoodServiceViewController.h */,
@@ -277,7 +280,10 @@
 				5937D4FB1BA1B7CD00D32723 /* Images.xcassets */,
 				5937D4FD1BA1B7CD00D32723 /* LaunchScreen.xib */,
 				5937D4EE1BA1B7CD00D32723 /* Supporting Files */,
+				597FD90A1BE577BA0061BB74 /* LoginViewController.h */,
+				597FD90B1BE577BA0061BB74 /* LoginViewController.m */,
 			);
+			name = ZhongChuang;
 			path = Busine;
 			sourceTree = "<group>";
 		};
@@ -290,12 +296,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5937D5071BA1B7CD00D32723 /* BusineTests */ = {
+		5937D5071BA1B7CD00D32723 /* ZhongChuangTests */ = {
 			isa = PBXGroup;
 			children = (
 				5937D50A1BA1B7CD00D32723 /* BusineTests.m */,
 				5937D5081BA1B7CD00D32723 /* Supporting Files */,
 			);
+			name = ZhongChuangTests;
 			path = BusineTests;
 			sourceTree = "<group>";
 		};
@@ -475,7 +482,7 @@
 		5937D4E31BA1B7CD00D32723 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "黄剛";
 				TargetAttributes = {
 					5937D4EA1BA1B7CD00D32723 = {
@@ -487,7 +494,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5937D4E61BA1B7CD00D32723 /* Build configuration list for PBXProject "Busine" */;
+			buildConfigurationList = 5937D4E61BA1B7CD00D32723 /* Build configuration list for PBXProject "ZhongChuang" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -577,6 +584,7 @@
 				5937D4F41BA1B7CD00D32723 /* AppDelegate.m in Sources */,
 				59665E3A1BA399B600F97570 /* BuyGoodServiceViewController.m in Sources */,
 				599EE1CC1BB0EFF000F77E30 /* ASIInputStream.m in Sources */,
+				597FD90C1BE577BA0061BB74 /* LoginViewController.m in Sources */,
 				599EE1CB1BB0EFF000F77E30 /* ASIHTTPRequest.m in Sources */,
 				5937D4F11BA1B7CD00D32723 /* main.m in Sources */,
 				599EE1CA1BB0EFF000F77E30 /* ASIFormDataRequest.m in Sources */,
@@ -648,6 +656,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -728,6 +737,7 @@
 					"/Users/yunfeitian/Downloads/ShareSDK简洁版/libraries/extends/SinaWeiboSDK",
 					"/Users/yunfeitian/Downloads/ShareSDK简洁版/libraries/extends/WeChatSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kougou.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -753,6 +763,7 @@
 					"/Users/yunfeitian/Downloads/ShareSDK简洁版/libraries/extends/SinaWeiboSDK",
 					"/Users/yunfeitian/Downloads/ShareSDK简洁版/libraries/extends/WeChatSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kougou.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -771,6 +782,7 @@
 				);
 				INFOPLIST_FILE = BusineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kougou.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Busine.app/Busine";
 			};
@@ -786,6 +798,7 @@
 				);
 				INFOPLIST_FILE = BusineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kougou.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Busine.app/Busine";
 			};
@@ -794,7 +807,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5937D4E61BA1B7CD00D32723 /* Build configuration list for PBXProject "Busine" */ = {
+		5937D4E61BA1B7CD00D32723 /* Build configuration list for PBXProject "ZhongChuang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5937D50C1BA1B7CD00D32723 /* Debug */,
