@@ -113,18 +113,21 @@
 // 提交处理
 -(void)submitLogon {
     // 构造了一个最简单的字典类型的数据，因为自iOS 5后提供把NSDictionary转换成JSON格式的API
-    NSDictionary *user = [[NSDictionary alloc] initWithObjectsAndKeys:@"userId", @"userId", nil];
+    NSMutableDictionary *logonInfo = [[NSMutableDictionary alloc] initWithObjectsAndKeys:self.userName.text, @"userId", nil];
+    [logonInfo setObject:self.password.text forKey:@"userPassword"];
+    [logonInfo setObject:@"001" forKey:@"logonType"];
+    
     // 第二行if判断该字典数据是否可以被JSON化
-    if ([NSJSONSerialization isValidJSONObject:user])
+    if ([NSJSONSerialization isValidJSONObject:logonInfo])
     {
         NSError *error;
         // 这一句就是把NSDictionary转换成JSON格式的方法，JSON格式的数据存储在NSData类型的变量中
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:user options:NSJSONWritingPrettyPrinted error: &error];
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:logonInfo options:NSJSONWritingPrettyPrinted error: &error];
         // 这一句是把NSData转换成NSMutableData，原因是下面我们要利用ASIHTTPRequest发送JSON数据时，其消息体一定要以NSMutableData的格式存储
         NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
         NSLog(@"Register JSON:%@",[[NSString alloc] initWithData:tempJsonData encoding:NSUTF8StringEncoding]);
         // 这两句的主要功能是设置要与客户端交互的服务器端地址
-        NSURL *url = [NSURL URLWithString:@"http://localhost:8080/zc/card/login.action"];
+        NSURL *url = [NSURL URLWithString:@"http://localhost:8080/zc/tuser/login.action"];
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         // 是设置HTTP请求信息的头部信息，从中可以看到内容类型是JSON
         [request addRequestHeader:@"Content-Type" value:@"application/json; encoding=utf-8"];
@@ -138,13 +141,8 @@
         // 是打印服务器返回的响应信息
         if (!error1) {
             NSString *response = [request responseString];
-            NSArray *arrlist=[response objectFromJSONString];
-            NSLog(@"%lu",(unsigned long)[arrlist count]);
-            for (int i=0; i<[arrlist count]; i++) {
-                NSDictionary *item=[arrlist objectAtIndex:i];
-                NSString *BrandName=[item objectForKey:@""];
-                NSLog(@"%@",BrandName);
-            }
+            NSDictionary *resultsDictionary=[response objectFromJSONString];
+            NSLog(@"%@",[resultsDictionary objectForKey:@"errorInfo"]);
         }
         
         
